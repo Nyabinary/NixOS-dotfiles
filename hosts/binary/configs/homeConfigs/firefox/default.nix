@@ -1,0 +1,143 @@
+{ ... }:
+{
+  programs.firefox = {
+    profiles = {
+      default = {
+        id = 0;
+        name = "default";
+        isDefault = true;
+        settings = {
+          "apz.overscroll.enabled" = true;
+          "cookiebanners.service.mode" = 1;
+          "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+          "image.jxl.enabled" = true;
+          "privacy.donottrackheader.enabled" = true;
+          "privacy.fingerprintingProtection" = true;
+          "privacy.globalprivacycontrol.enabled" = true;
+          "privacy.query_stripping.enabled.pbmode" = true;
+          "privacy.webrtc.globalMuteToggles" = true;
+        };
+        search = {
+          force = true;
+          default = "DuckDuckGo";
+          order = [
+            "DuckDuckGo"
+            "Google"
+          ];
+        };
+      };
+    };
+    policies = {
+      DisableTelemetry = true;
+      DontCheckDefaultBrowser = true;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = false;
+        Cryptomining = true;
+        Fingerprinting = true;
+        EmailTracking = true;
+        #SocialTracking = true;
+      };
+      EncryptedMediaExtensions = {
+        Enabled = true;
+        Locked = false;
+      };
+      ExtensionSettings = {
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+          installation_mode = "normal_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+          updates_disabled = false;
+          default_area = "navbar";
+        };
+        "languagetool-webextension@languagetool.org" = {
+          installation_mode = "normal_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/languagetool/latest.xpi";
+          updates_disabled = false;
+          default_area = "navbar";
+        };
+        "uBlock0@raymondhill.net" = {
+          installation_mode = "normal_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          updates_disabled = false;
+          default_area = "menubar";
+        };
+        "magnolia@12.34" = {
+          installation_mode = "normal_installed";
+          #install_url = "https://gitlab.com/magnolia1234/bpc-uploads/-/raw/master/bypass_paywalls_clean-latest.xpi";
+          install_url = "https://github.com/bpc-clone/bpc_updates/releases/download/latest/bypass_paywalls_clean-latest.xpi";
+          updates_disabled = false;
+          default_area = "menubar";
+        };
+      };
+      FirefoxHome = {
+        Search = true;
+        TopSites = true;
+        SponsoredTopSites = false;
+        Highlights = false;
+        Pocket = true;
+        SponsoredPocket = false;
+        Locked = false;
+      };
+      FirefoxSuggest = {
+        WebSuggestions = true;
+        SponsoredSuggestions = false;
+        ImproveSuggest = false;
+        Locked = false;
+      };
+      HardwareAcceleration = true;
+      Homepage = {
+        URL = "about:home";
+        Locked = false;
+        StartPage = "homepage";
+      };
+      NoDefaultBookmarks = true;
+      PasswordManagerEnabled = false;
+      Preferences = {
+        "browser.contentblocking.category" = {
+          Value = "strict";
+          Status = "default";
+        };
+        "browser.ml.chat.enabled" = {
+          Value = true;
+          Status = "default";
+        };
+        "browser.tabs.cardPreview.enabled" = {
+          Value = true;
+          Status = "default";
+        };
+        "browser.theme.content-theme" = {
+          Value = 2;
+          Status = "default";
+        };
+        "browser.theme.toolbar-theme" = {
+          Value = 2;
+          Status = "default";
+        };
+        "widget.use-xdg-desktop-portal.file-picker" = {
+          Value = 1;
+          Status = "default";
+        };
+        "widget.use-xdg-desktop-portal.location" = {
+          Value = 1;
+          Status = "default";
+        };
+        "widget.use-xdg-desktop-portal.mime-handler" = {
+          Value = 1;
+          Status = "default";
+        };
+        "widget.use-xdg-desktop-portal.open-uri" = {
+          Value = 1;
+          Status = "default";
+        };
+        "widget.use-xdg-desktop-portal.settings" = {
+          Value = 1;
+          Status = "default";
+        };
+        "widget.wayland.fractional-scale.enabled" = {
+          Value = 1;
+          Status = "default";
+        };
+      };
+    };
+  };
+}
